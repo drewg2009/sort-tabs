@@ -1,9 +1,14 @@
 let frequencyOfSort = 1000
 let currentTabTitles = []
 
-setInterval(function () {
-    sortTabs()
-}, frequencyOfSort)
+// start sorting interval from initial state
+createInterval();
+
+function createInterval() {
+    interval = setInterval(function () {
+        sortTabs()
+    }, frequencyOfSort)
+}
 
 // A function to extract value as an array and compare them
 function equalsCheck(arrayA, arrayB) {
@@ -91,6 +96,12 @@ chrome.runtime.onMessage.addListener(
     }
 );
 
+function recreateInterval() {
+    clearInterval(interval)
+    createInterval()
+}
+
 function updateConfiguration(request) {
     frequencyOfSort = request.frequency
+    recreateInterval()
 }
