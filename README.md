@@ -1,6 +1,5 @@
-# Sort Tabs
+# Tabs Genie
 
-![logo-no-background](https://user-images.githubusercontent.com/12537806/221689039-695ef3e7-541c-479e-a8f2-347f540234c1.png)
 
 
 ## Development
