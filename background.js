@@ -22,17 +22,28 @@ function equalsCheck(arrayA, arrayB) {
 }
 
 async function moveTab(tabs, index) {
-    let tabId = tabs[index].id
+    let tab = tabs[index]
+    if (tab != null) {
+        let tabId = tabs[index].id
 
-    try {
-        await chrome.tabs.move(tabId, { index: index });
-        console.log("Success.");
-    } catch (error) {
-        if (error == "Error: Tabs cannot be edited right now (user may be dragging a tab).") {
-            setTimeout(() => moveTab(tabId, index));
-        } else {
-            console.error(error);
+        if (tabId != null) {
+
+            try {
+                await chrome.tabs.move(tabId, { index: index });
+                console.log("Success.");
+            } catch (error) {
+                if (error == "Error: Tabs cannot be edited right now (user may be dragging a tab).") {
+                    setTimeout(() => moveTab(tabs, index));
+                } else {
+                    console.error(error);
+                }
+            }
         }
+        else {
+            console.log('tab id null')
+        }
+    }else {
+        console.log('tab null')
     }
 }
 
