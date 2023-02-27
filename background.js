@@ -49,3 +49,15 @@ function sortTabs() {
 
 }
 
+chrome.runtime.onMessage.addListener(
+    function (request, sender, sendResponse) {
+        if(request.action === "updateConfiguration"){
+            updateConfiguration(request)
+        }
+        sendResponse("updated configuration");
+    }
+);
+
+function updateConfiguration(request) {
+    frequencyOfSort = parseInt(request.frequency)
+}
