@@ -21,9 +21,24 @@ function equalsCheck(arrayA, arrayB) {
     }
 }
 
+async function moveTab(tabs, index) {
+    let tabId = tabs[index].id
+
+    try {
+        await chrome.tabs.move(tabId, { index: index });
+        console.log("Success.");
+    } catch (error) {
+        if (error == "Error: Tabs cannot be edited right now (user may be dragging a tab).") {
+            setTimeout(() => moveTab(tabId, index));
+        } else {
+            console.error(error);
+        }
+    }
+}
+
 function moveTabs(tabs) {
-    for (let i = 0; i < tabs.length; i++) {
-        chrome.tabs.move(tabs[i].id, { index: i });
+    for (let index = 0; index < tabs.length; index++) {
+        moveTab(tabs, index)
     }
 }
 
