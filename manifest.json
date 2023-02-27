@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Sort tabs",
+  "name": "Tabs Genie",
   "version": "1.0",
   "background": {
     "service_worker": "background.js"
