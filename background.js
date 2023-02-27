@@ -6,14 +6,14 @@ setInterval(function () {
 }, frequencyOfSort)
 
 // A function to extract value as an array and compare them
-function equalsCheck(a, b) {
+function equalsCheck(arrayA, arrayB) {
     // check the length
-    if (a.length != b.length) {
+    if (arrayA.length != arrayB.length) {
         return false;
     } else {
         // comparing each element of array 
-        for (let i = 0; i < a.length; i++) {
-            if (a[i] !== b[i]) {
+        for (let i = 0; i < arrayA.length; i++) {
+            if (arrayA[i] !== arrayB[i]) {
                 return false;
             }
         }
@@ -51,7 +51,7 @@ function sortTabs() {
 
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
-        if(request.action === "updateConfiguration"){
+        if (request.action === "updateConfiguration") {
             updateConfiguration(request)
         }
         sendResponse("updated configuration");
@@ -59,5 +59,5 @@ chrome.runtime.onMessage.addListener(
 );
 
 function updateConfiguration(request) {
-    frequencyOfSort = parseInt(request.frequency)
+    frequencyOfSort = request.frequency
 }
