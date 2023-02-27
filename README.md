@@ -1,5 +1,7 @@
 # Sort Tabs
 
+![logo-no-background](https://user-images.githubusercontent.com/12537806/221688218-b170f9ab-a7db-49aa-b6fb-513bf9091873.png)
+
 
 Work with ease while your tabs sort themselves
 
