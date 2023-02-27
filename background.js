@@ -53,8 +53,11 @@ chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         if (request.action === "updateConfiguration") {
             updateConfiguration(request)
+            sendResponse("updated configuration");
         }
-        sendResponse("updated configuration");
+        if (request.action === "getFrequency") {
+            sendResponse({frequency: frequencyOfSort})
+        } 
     }
 );
 

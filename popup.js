@@ -1,3 +1,18 @@
+function onload() {
+  setCurrentFrequencyValueInForm()
+}
+
+onload()
+
+function setCurrentFrequencyValueInForm() {
+  chrome.runtime.sendMessage({ action: 'getFrequency'}).then(response => {
+    // do something with response here, not outside the function
+    if(response.frequency != null) {
+      document.getElementById('frequencyInput').value = convertFrequencyMsIntoSeconds(response.frequency)
+    }
+  })
+}
+
 function sendUserConfiguration() {
 
   const frequency = convertFrequencySecondsIntoMs(document.getElementById("frequencyInput").value)
@@ -7,6 +22,10 @@ function sendUserConfiguration() {
     console.log(response);
   })
 
+}
+
+function convertFrequencyMsIntoSeconds(milliseconds) {
+  return parseFloat(milliseconds) / 1000
 }
 
 function convertFrequencySecondsIntoMs(seconds) {
