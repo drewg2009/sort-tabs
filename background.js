@@ -49,6 +49,10 @@ function sortTabs() {
 
 }
 
+chrome.tabs.onMoved.addListener(function () {
+    console.log('moved tab...')
+})
+
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         if (request.action === "updateConfiguration") {
@@ -56,8 +60,8 @@ chrome.runtime.onMessage.addListener(
             sendResponse("updated configuration");
         }
         if (request.action === "getFrequency") {
-            sendResponse({frequency: frequencyOfSort})
-        } 
+            sendResponse({ frequency: frequencyOfSort })
+        }
     }
 );
 
