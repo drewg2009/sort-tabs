@@ -6,6 +6,17 @@
 
 It sorts your chrome tabs at the frequency you want, automatically. 
 
+## How It Works
+
+Basically there is a background script and a chrome extension popup script that talk to each other. 
+
+The popup script will send the user configuration to the background script upon form changes. 
+
+The background script with receive messages to change the sorting frequency or other settings and send back a response. 
+
+The app sorts with a default frequency using the Chrome Tabs API. 
+
+
 ## Development
 
 Contributations are encouraged. 
