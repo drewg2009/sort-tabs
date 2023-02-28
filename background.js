@@ -30,7 +30,6 @@ async function moveTab(tabs, index) {
     let tab = tabs[index]
     if (tab != null) {
         let tabId = tabs[index].id
-
         if (tabId != null) {
 
             try {
@@ -44,11 +43,6 @@ async function moveTab(tabs, index) {
                 }
             }
         }
-        else {
-            console.log('tab id null')
-        }
-    }else {
-        console.log('tab null')
     }
 }
 
