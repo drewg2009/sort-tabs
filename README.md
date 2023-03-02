@@ -35,7 +35,7 @@ Changes will not be auto published. You will have to coordinate with a code owne
 
 #### Standards
 
-- Code must be tested at a miniumum manually with a loom video/similar video showing the working functionality. This must be approve by the code owner or moderator. 
+- At a minimum, code must be tested  manually with a loom video/similar video showing the working functionality. This must be approved by the code owner or moderator. 
 - All new code must be approved via a pull request to main from a feature branch. 
 - If unit testing is enabled, unit testing your functionality will be required for added functions to ensure code quality. Screenshots/recordings of passing tests or validation of working tests will be required. 
 - Variable/function names must be descriptive with their purpose in mind
