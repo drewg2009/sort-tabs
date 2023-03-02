@@ -13,13 +13,23 @@ function setCurrentFrequencyValueInForm() {
   })
 }
 
+function showConfigurationSuccessMessage() {
+  const configurationSuccessMessage = document.querySelector("#configuration-success-message")
+  configurationSuccessMessage.classList.remove("d-none");
+  setTimeout(function() {
+    configurationSuccessMessage.classList.add("d-none")
+  }, 3000)
+  
+}
+
 function sendUserConfiguration() {
 
   const frequency = convertFrequencySecondsIntoMs(document.getElementById("frequencyInput").value)
 
   chrome.runtime.sendMessage({ action: 'updateConfiguration', frequency: frequency }).then(response => {
-    // do something with response here, not outside the function
-    console.log(response);
+    if(response === 'updated configuration') {
+      showConfigurationSuccessMessage()
+    }
   })
 
 }

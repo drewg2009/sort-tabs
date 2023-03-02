@@ -5,16 +5,26 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="./popup.css" />
 </head>
 
 <body>
-  <h1>Tabs Genie</h1>
-  <label for="tentacles">How often should I sort your tabs? (in seconds)</label>
-  <input id="frequencyInput" type="number"/>
-  <div id="error"></div>
-  <button id="save">Save Sort Frequency</button>
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title mb-2">Tabs Genie</h1>
+      <label class="mb-2">How often should I sort your tabs? (in seconds)</label>
+      <input id="frequencyInput" class="mb-2" type="number"/>
+      <div id="error" class="mb-2"></div>
+      <button id="save" class="btn btn-primary mb-2">Save Sort Frequency</button>
+      <div id="configuration-success-message" class="alert alert-success d-none" role="alert">
+        Your configuration has been updated!
+      </div>
+    </div>
+  </div>
+
 </body>
+<script src="js/bootstrap.min.js"></script>
 <script src="popup.js"></script>
 
 </html>
