@@ -16,6 +16,11 @@ The background script with receive messages to change the sorting frequency or o
 
 The app sorts with a default frequency using the Chrome Tabs API. 
 
+## Product Links
+
+#### Chrome Web Store Listing 
+https://chrome.google.com/webstore/detail/tabs-genie/agneehneblglmeilffcaaceoiidfgbcn
+
 
 ## Development
 
