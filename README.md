@@ -31,6 +31,14 @@ Before creating a contribution please review the dev standards/procedures sectio
 To get started, please read up on Google Chrome Extension development docs 
 https://developer.chrome.com/docs/extensions/
 
+#### Technologies Used
+
+- HTML
+- CSS
+- Javascript
+- Bootstrap
+- Chrome Extension APIs
+
 ### Dev Standards/Procedures
 
 #### Procedures
