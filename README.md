@@ -23,6 +23,9 @@ Contributations are encouraged.
 
 Before creating a contribution please review the dev standards/procedures section
 
+To get started, please read up on Google Chrome Extension development docs 
+https://developer.chrome.com/docs/extensions/
+
 ### Dev Standards/Procedures
 
 #### Procedures
