@@ -1,5 +1,10 @@
 let frequencyOfSort = 1000
 let currentTabTitles = []
+const URL = 'url'
+
+// default ordering
+let ordering = URL
+
 
 // start sorting interval from initial state
 createInterval();
@@ -52,6 +57,15 @@ function moveTabs(tabs) {
     }
 }
 
+function getValueToSortByFromOrderingSelected(tab) {
+    if(ordering === URL) {
+        return tab.url
+    }
+    if(ordering === 'title') {
+        return tab.title
+    }
+}
+
 function sortTabs() {
     chrome.tabs.query({}).then(tabs => {
 
@@ -63,10 +77,8 @@ function sortTabs() {
         if (!same) {
             currentTabTitles = tabTitles
 
-            console.log('sorting tabs...')
-
             const collator = new Intl.Collator();
-            tabs.sort((tabA, tabB) => collator.compare(tabA.title, tabB.title));
+            tabs.sort((tabA, tabB) => collator.compare(getValueToSortByFromOrderingSelected(tabA), getValueToSortByFromOrderingSelected(tabB)));
 
             moveTabs(tabs)
         }
